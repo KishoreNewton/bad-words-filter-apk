@@ -35,7 +35,7 @@ $breakpoint-tablet: 768px;
 }
 
 @media (min-width: $breakpoint-mobile-xtrasmall) {
-  #input {
+  #input, #output {
     border: 1px solid rgb(42, 42, 42);
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
@@ -63,7 +63,7 @@ $breakpoint-tablet: 768px;
 
 @media (min-width: $breakpoint-mobile-small) {
   
-  #input {
+  #input, #output {
     border: 1px solid rgb(42, 42, 42);
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
@@ -89,7 +89,7 @@ $breakpoint-tablet: 768px;
 
 @media (min-width: $breakpoint-mobile-medium) {  
 
-  #input {
+  #input, #output {
     border: 1px solid rgb(42, 42, 42);
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
@@ -109,7 +109,7 @@ $breakpoint-tablet: 768px;
 
 @media (min-width: $breakpoint-mobile-large) {  
 
-  #input {
+  #input, #output {
     border: 1px solid rgb(42, 42, 42);
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
@@ -128,7 +128,7 @@ $breakpoint-tablet: 768px;
 
 @media (min-width: $breakpoint-tablet) {  
 
-  #input {
+  #input, #output {
     border: 1px solid rgb(42, 42, 42);
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);

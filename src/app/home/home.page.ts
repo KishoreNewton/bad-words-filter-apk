@@ -1,6 +1,5 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, ViewChild, Renderer2, ElementRef} from '@angular/core';
 import Filter from 'bad-words'
-import { clear } from 'console';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +8,9 @@ import { clear } from 'console';
 })
 
 export class HomePage {
+  @ViewChild('output') div
   @ViewChild('clear') clean
+  @ViewChild('textarea') textarea
   isShow = true
   custom = 'Custom'
 
@@ -40,11 +41,9 @@ export class HomePage {
     }
   ]
 
-  // constructor(
-  //   public dialogRef: MatDialogRef<HomePage>,
-  //   @Inject(MAT_DIALOG_DATA) public data: any
-  // ) {}
+  constructor(private renderer: Renderer2){
 
+  }
 
   filterData(toggle, input) {
     if(toggle === 'null') toggle = ' '
@@ -52,16 +51,22 @@ export class HomePage {
       const customFilter = new Filter({
         placeHolder: toggle
       })
-      console.log(customFilter.clean('Dont be asshole here'))
+      // console.log(customFilter.clean(input))
+      this.addElement(customFilter.clean(input))
     } else  {
       const customFilter = new Filter({
         placeHolder: this.clean.nativeElement.value
       })
-      console.log(this.clean.nativeElement.value)
+      // console.log(customFilter.clean(input))
+      this.addElement(customFilter.clean(input))
     }
   }
 
-  open() {
+  addElement(text): void{
+    
+  }
+
+  open(): void {
     
   }
 
