@@ -1,5 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import Filter from 'bad-words'
+import { clear } from 'console';
 
 @Component({
   selector: 'app-home',
@@ -46,13 +47,18 @@ export class HomePage {
 
 
   filterData(toggle, input) {
-    if(toggle === 'null'){
-      toggle = ' '
+    if(toggle === 'null') toggle = ' '
+    if(this.clean.nativeElement.value === null || this.clean.nativeElement.value === ''){
+      const customFilter = new Filter({
+        placeHolder: toggle
+      })
+      console.log(customFilter.clean('Dont be asshole here'))
+    } else  {
+      const customFilter = new Filter({
+        placeHolder: this.clean.nativeElement.value
+      })
+      console.log(this.clean.nativeElement.value)
     }
-    const customFilter = new Filter({
-      placeHolder: toggle
-    })
-    console.log(customFilter.clean('Dont be asshole here'))
   }
 
   open() {

@@ -16,14 +16,13 @@
         </mat-button-toggle>
       </mat-button-toggle-group>
       <button (click)="toggleInput(clear.value)" id="change-custom" mat-raised-button class="red-accent" color="accent">{{custom}}</button>
-      <input class="custom-text" #clear [(ngModel)]="passvalue" [hidden]="isShow" type="text" maxlength="1" minlength="1" />
-      <!-- <button (click)="okay(passvalue)" [disabled]="!passvalue" mat-raised-button class="red-accent" [hidden]="isShow">Done</button> -->
+      <input class="custom-text" #clear [hidden]="isShow" type="text" maxlength="1" minlength="1" />
     </div>
     <div class="bottom">
       <textarea placeholder="Enter Sentance to filter" id="input" required wrap="hard" [(ngModel)]="filter" required></textarea>
     </div>
     <div>
-      <button mat-button class="btn" (click)="filterData(group.value, filter)" [disabled]="(!filter || !group.value) && (!passvalue || !filter)">Filter</button>
+      <button mat-button class="btn" (click)="filterData(group.value, filter)" [disabled]="(!filter || !group.value) && (!clear || !filter)">Filter</button>
       <textarea hidden id="output"></textarea>
     </div>
   </div>
