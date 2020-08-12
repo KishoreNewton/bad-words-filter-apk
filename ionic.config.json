@@ -1,0 +1,7 @@
+{
+  "name": "badword",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
