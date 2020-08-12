@@ -6,11 +6,21 @@
   </ion-header>
 
   <div id="container">
+    <div>
+      <mat-button-toggle-group
+        #group="matButtonToggleGroup">
+        <mat-button-toggle *ngFor="let opt of labels" [value]="opt.text">
+          <mat-icon [ngClass]="opt.color">{{
+            opt.text
+          }}</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
     <div class="bottom">
-      <textarea  placeholder="Enter Sentance to filter" id="input" required wrap="hard" [(ngModel)]="filter"></textarea>
+      <textarea [(ngModel)]="textarea" placeholder="Enter Sentance to filter" id="input" required wrap="hard" [(ngModel)]="filter"></textarea>
     </div>
     <div>
-      <button class="btn btn-white btn-animated animated-middle fadeInUp">Filter</button>
+      <button mat-button class="btn">Filter</button>
       <textarea hidden id="output"></textarea>
     </div>
   </div>

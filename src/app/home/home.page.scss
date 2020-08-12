@@ -1,3 +1,4 @@
+$breakpoint-mobile-xtrasmall: 250px;
 $breakpoint-mobile-small: 320px;
 $breakpoint-mobile-medium: 375px;
 $breakpoint-mobile-large: 425px;
@@ -10,6 +11,39 @@ $breakpoint-tablet: 768px;
   right: 0;
   top: 50%;
   transform: translateY(-50%); 
+}
+
+.blue { color: #71deff; }
+.green { color: #36e9b6; }
+.yellow { color: #ffcf44; }
+.purple { color: #b15cff; }
+.red { color: #e74a4a; }
+
+@media (min-width: $breakpoint-mobile-xtrasmall) {
+  #input {
+    border: 1px solid rgb(42, 42, 42);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 400px;
+    width: 225px;
+    margin-bottom: 10px;
+  }
+
+  .bottom {
+    margin-top: 10px;
+  }
+  
+  
+  .btn {
+    height: 40px;
+    width: 100px;
+    // background-color: black;
+    // color: wheat;
+    // border-radius: 25px;
+    text-transform: uppercase;
+  }
 }
 
 @media (min-width: $breakpoint-mobile-small) {
@@ -33,9 +67,9 @@ $breakpoint-tablet: 768px;
   .btn {
     height: 40px;
     width: 100px;
-    background-color: black;
-    color: wheat;
-    border-radius: 25px;
+    // background-color: black;
+    // color: wheat;
+    // border-radius: 25px;
     text-transform: uppercase;
   }
 }
@@ -49,8 +83,8 @@ $breakpoint-tablet: 768px;
     color: rgb(0, 0, 0);
     border-radius: 2px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 300px;
-    height: 550px;
+    width: 350px;
+    height: 500px;
   }
   
   .btn {
@@ -58,5 +92,54 @@ $breakpoint-tablet: 768px;
     width: 150px;
     background-color: black;
     color: wheat;
+    border-radius: 25px;
+    text-transform: uppercase;
+  }
+}
+
+
+@media (min-width: $breakpoint-mobile-large) {  
+
+  #input {
+    border: 1px solid rgb(42, 42, 42);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 400px;
+    height: 500px;
+  }
+  
+  .btn {
+    height: 50px;
+    width: 150px;
+    background-color: black;
+    color: wheat;
+    border-radius: 25px;
+    text-transform: uppercase;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {  
+
+  #input {
+    border: 1px solid rgb(42, 42, 42);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    width: 700px;
+    height: 800px;
+  }
+  
+  .btn {
+    height: 50px;
+    width: 350px;
+    background-color: black;
+    color: wheat;
+    font-size: large;
+    border-radius: 25px;
+    text-transform: uppercase;
   }
 }
