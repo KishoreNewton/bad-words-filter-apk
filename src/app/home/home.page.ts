@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import Filter from 'bad-words'
 
 @Component({
@@ -6,7 +6,9 @@ import Filter from 'bad-words'
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
 export class HomePage {
+  @ViewChild('clear') clean
   isShow = true
   custom = 'Custom'
 
@@ -57,11 +59,11 @@ export class HomePage {
     
   }
 
-  toggleInput(value) {
+  toggleInput() {
     this.isShow = !this.isShow
     if(this.isShow === true){
       this.custom = 'Custom'
-      value = ''
+      this.clean.nativeElement.value = ''
     } else {
       this.custom = 'Back'
     }
