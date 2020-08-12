@@ -1,7 +1,5 @@
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {Component} from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
-
+import Filter from 'bad-words'
 
 @Component({
   selector: 'app-home',
@@ -9,6 +7,7 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
   labels = [
     {
       color: 'purple',
@@ -29,6 +28,10 @@ export class HomePage {
     {
       color: 'red',
       text: '_'
+    },
+    {
+      color: 'gray',
+      text: 'null'
     }
   ]
 
@@ -38,7 +41,10 @@ export class HomePage {
   // ) {}
 
 
-  filterData() {
-    
+  filterData(toggle, input) {
+    const customFilter = new Filter({
+      placeHolder: toggle
+    })
+    console.log(customFilter.clean('Dont be asshole'))
   }
 }
