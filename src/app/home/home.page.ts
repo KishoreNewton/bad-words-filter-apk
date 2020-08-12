@@ -7,6 +7,8 @@ import Filter from 'bad-words'
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  isShow = true
+  custom = 'Custom'
 
   labels = [
     {
@@ -42,9 +44,27 @@ export class HomePage {
 
 
   filterData(toggle, input) {
+    if(toggle === 'null'){
+      toggle = ' '
+    }
     const customFilter = new Filter({
       placeHolder: toggle
     })
-    console.log(customFilter.clean('Dont be asshole'))
+    console.log(customFilter.clean('Dont be asshole here'))
   }
+
+  open() {
+    
+  }
+
+  toggleInput(value) {
+    this.isShow = !this.isShow
+    if(this.isShow === true){
+      this.custom = 'Custom'
+      value = ''
+    } else {
+      this.custom = 'Back'
+    }
+  }
+
 }

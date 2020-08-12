@@ -13,11 +13,22 @@ $breakpoint-tablet: 768px;
   transform: translateY(-50%); 
 }
 
+.red-accent{
+  height: 48px;
+}
+
+.custom-text{
+  margin-left: 5px;
+  height: 48px;
+  width: 50px;
+}
+
 .blue { color: #71deff; }
 .green { color: #36e9b6; }
 .yellow { color: #ffcf44; }
 .purple { color: #b15cff; }
 .red { color: #e74a4a; }
+.gray { color: grey; }
 
 .btn {
   font-weight: 800;
