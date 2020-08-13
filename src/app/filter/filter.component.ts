@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-filter',
@@ -7,20 +7,26 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class FilterComponent implements OnInit {
   @ViewChild('localStorage') localStorageInput
+  @ViewChild('arrayButton') arrBtn
+  @ViewChild('ul') ul: ElementRef
   userSetFilters = JSON.parse(localStorage.getItem("userFilter"))
-  constructor() { }
+  constructor(private renderer: Renderer2) { }
 
   ngOnInit() {}
 
-  // localStore = localStorage.setItem("userFilter", JSON.stringify([]))
-
   pushLocalStorage(value){
     let customFiler = JSON.parse(localStorage.getItem('userFilter'))
-    // customFiler.push(value)
-    // console.log(customFiler)
     localStorage.setItem("userFilter", JSON.stringify([...customFiler, value]))
     this.localStorageInput.nativeElement.value = ''
-    console.log(JSON.parse(localStorage.getItem("userFilter")))
+    this.arrBtn._disabled = true
+    this.userSetFilters.push(value)
+  }
+
+  removeFromLocalStorage(value){
+    this.userSetFilters = this.userSetFilters.filter((filter) => {
+      return filter != this.userSetFilters[value]
+    })
+    localStorage.setItem("userFilter", JSON.stringify([...this.userSetFilters]))
   }
 
 }

@@ -1,16 +1,22 @@
 <ion-content [fullscreen]="true">
-  
-    <div>
-     <a mat-button color="primary" routerLink="/" >Back</a>
-    </div>
+  <div>
+    <a mat-button color="primary" class="backButton" routerLink="/" >Back</a>
+  </div>
   <div id="container">
     <div id="input">
       <div id="inputLocal">
         <input #localStorage mat-input [(ngModel)]="array" />
       </div>
       <div>
-        <button [disabled]="!array" (click)="pushLocalStorage(localStorage.value)"  mat-raised-button color="accent">Done</button>
+        <button [disabled]="!array" #arrayButton (click)="pushLocalStorage(localStorage.value)"  mat-raised-button color="accent">Done</button>
       </div>
+    </div>
+    <div id="outputLocal">
+      <ul #ul>
+        <li *ngFor="let filter of userSetFilters; index as i" id={{i}}>{{filter}} <button id="materialDelete" mat-button color="primary" (click)="removeFromLocalStorage(i)">
+          <mat-icon>delete</mat-icon>
+        </button></li>
+      </ul>
     </div>
   </div>
 </ion-content>

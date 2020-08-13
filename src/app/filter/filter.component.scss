@@ -20,3 +20,34 @@
     position: relative;
     margin-bottom: 10px;
 }
+
+#outputLocal {
+    position: relative;
+    margin-top: 30%;
+}
+
+ul {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding: 0;
+}
+
+li {
+    height: 40px;
+    padding: 0 25%;
+    list-style: none;
+    width: 100%;  
+    display: inline-block;
+}
+
+.backButton {
+    height: 30px;
+    width: 50px;
+}
+
+#materialDelete {
+    display: inline-flex;
+    padding: 0 ;
+    
+}
