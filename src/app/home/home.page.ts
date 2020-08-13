@@ -48,20 +48,22 @@ export class HomePage {
 
   filterData(toggle, input) {
     if(toggle === 'null') toggle = ' '
-    const newBadWords = JSON.parse(localStorage.getItem('userFilter'))
+    const newBadWords = JSON.parse(localStorage.getItem('userFilter')) || []
+    const removeWords = JSON.parse(localStorage.getItem('removeFilter')) || []
     console.log(newBadWords)
     if(this.clean.nativeElement.value === null || this.clean.nativeElement.value === ''){
       const customFilter = new Filter({
         placeHolder: toggle
       })
       customFilter.addWords(...newBadWords)
+      customFilter.removeWords(...removeWords)
       this.addElement(customFilter.clean(input))
     } else  {
       const customFilter = new Filter({
         placeHolder: this.clean.nativeElement.value
       })
       customFilter.addWords(...newBadWords)
-      // console.log(customFilter.clean(input))
+      customFilter.removeWords(...removeWords)
       this.addElement(customFilter.clean(input))
     }
   }

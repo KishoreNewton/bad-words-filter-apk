@@ -5,15 +5,15 @@
   <div id="container">
     <div id="input">
       <div id="inputLocal">
-        <input #localStorage mat-input [(ngModel)]="array" />
+        <input #removeStorage mat-input [(ngModel)]="array" />
       </div>
       <div>
-        <button [disabled]="!array" #arrayButton (click)="pushLocalStorage(localStorage.value)"  mat-raised-button color="accent">Done</button>
+        <button [disabled]="!array" #removeArrayButton (click)="pushLocalStorage(removeStorage.value)"  mat-raised-button color="accent">Done</button>
       </div>
     </div>
     <div id="outputLocal">
-      <ul #ul>
-        <li *ngFor="let filter of userSetFilters; index as i" id={{i}}>{{filter}} <button id="materialDelete" mat-button color="primary" (click)="removeFromLocalStorage(i)">
+      <ul #append>
+        <li *ngFor="let filter of removeFilters; index as i" id={{i}}>{{filter}} <button id="materialDelete" mat-button color="accent" (click)="removeFromLocalStorage(i)">
           <mat-icon>delete</mat-icon>
         </button></li>
       </ul>
