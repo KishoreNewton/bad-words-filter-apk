@@ -1,27 +1,23 @@
 <ion-content [fullscreen]="true">
   <div id="container">
-    <div>
-      <mat-button-toggle-group [hidden]="!isShow"
-        #group="matButtonToggleGroup">
-        <mat-button-toggle *ngFor="let opt of labels" [value]="opt.text">
-          <mat-icon [ngClass]="opt.color">{{
-            opt.text
-          }}</mat-icon>
-        </mat-button-toggle>
-      </mat-button-toggle-group>
-      <button (click)="toggleInput(clear.value)" id="change-custom" mat-raised-button class="red-accent" color="accent">{{custom}}</button>
-      <input class="custom-text" #clear [hidden]="isShow" type="text" maxlength="1" minlength="1" />
+      <div>
+        <mat-button-toggle-group [hidden]="!isShow"
+          #group="matButtonToggleGroup">
+          <mat-button-toggle *ngFor="let opt of labels" [value]="opt.text">
+            <mat-icon [ngClass]="opt.color">{{
+              opt.text
+            }}</mat-icon>
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+        <button (click)="toggleInput(clear.value)" id="change-custom" mat-raised-button class="red-accent" color="accent">{{custom}}</button>
+        <input class="custom-text" #clear [hidden]="isShow" type="text" maxlength="1" minlength="1" />
+      </div>
+      <div class="bottom">
+        <textarea matInput #textarea placeholder="Enter Sentance to filter" id="input" required wrap="hard" [(ngModel)]="filter" required></textarea>
+      </div>
+      <div>
+        <button mat-button class="btn" (click)="filterData(group.value, filter)" [disabled]="!filter">Filter</button>
+      </div>
+        <a mat-button color="primary" routerLink="/filter" >Add Custom Filter</a>
     </div>
-    <div class="bottom">
-      <textarea #textarea placeholder="Enter Sentance to filter" id="input" required wrap="hard" [(ngModel)]="filter" required></textarea>
-    </div>
-    <div>
-      <button mat-button class="btn" (click)="filterData(group.value, filter)" [disabled]="(!filter || !group.value) && (!clear || !filter) && (!output)">Filter</button>
-    </div>
-    <div #output hidden>
-      <input #output id="output" />
-      <button id="new">NEW</button>
-      <button id="save">SAVE</button>
-    </div>
-  </div>
 </ion-content>

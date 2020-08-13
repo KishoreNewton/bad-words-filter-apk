@@ -1,5 +1,8 @@
 import {Component, ViewChild, Renderer2, ElementRef} from '@angular/core';
 import Filter from 'bad-words'
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
+import { Observable } from 'rxjs'
+import { map, shareReplay } from 'rxjs/operators'
 
 @Component({
   selector: 'app-home',
@@ -8,12 +11,10 @@ import Filter from 'bad-words'
 })
 
 export class HomePage {
-  @ViewChild('output') div
   @ViewChild('clear') clean
   @ViewChild('textarea') textarea
   isShow = true
   custom = 'Custom'
-
   labels = [
     {
       color: 'purple',
@@ -62,8 +63,8 @@ export class HomePage {
     }
   }
 
-  addElement(text): void{
-    
+  addElement(text){
+    this.textarea.nativeElement.value = text
   }
 
   open(): void {
@@ -79,5 +80,4 @@ export class HomePage {
       this.custom = 'Back'
     }
   }
-
 }
