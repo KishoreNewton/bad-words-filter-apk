@@ -2,7 +2,7 @@ import {Component, ViewChild, Renderer2, ElementRef} from '@angular/core';
 import Filter from 'bad-words'
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 import { Observable } from 'rxjs'
-import { map, shareReplay } from 'rxjs/operators'
+import { map, shareReplay, filter } from 'rxjs/operators'
 
 @Component({
   selector: 'app-home',
@@ -48,16 +48,19 @@ export class HomePage {
 
   filterData(toggle, input) {
     if(toggle === 'null') toggle = ' '
+    const newBadWords = JSON.parse(localStorage.getItem('userFilter'))
+    console.log(newBadWords)
     if(this.clean.nativeElement.value === null || this.clean.nativeElement.value === ''){
       const customFilter = new Filter({
         placeHolder: toggle
       })
-      // console.log(customFilter.clean(input))
+      customFilter.addWords(...newBadWords)
       this.addElement(customFilter.clean(input))
     } else  {
       const customFilter = new Filter({
         placeHolder: this.clean.nativeElement.value
       })
+      customFilter.addWords(...newBadWords)
       // console.log(customFilter.clean(input))
       this.addElement(customFilter.clean(input))
     }

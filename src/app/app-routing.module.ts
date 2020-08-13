@@ -3,6 +3,10 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'remove',
+    loadChildren: () => import('./remove/remove.module').then(m => m.RemoveModule)
+  },
+  {
     path: 'filter',
     loadChildren: () => import('./filter/filter.module').then(m => m.FilterModule)
   },
