@@ -17,7 +17,6 @@ export class RemoveComponent implements OnInit {
   pushLocalStorage(value){
     if(!value) return
     let customFiler = JSON.parse(localStorage.getItem('removeFilter')) || []
-    console.log(customFiler)
     localStorage.setItem("removeFilter", JSON.stringify([...customFiler, value]))
     this.removeStorageInput.nativeElement.value = ''
     this.removeFilters.push(value)

@@ -16,7 +16,6 @@ export class FilterComponent implements OnInit {
   pushLocalStorage(value){
     if(!value) return
     let customFiler = JSON.parse(localStorage.getItem('userFilter')) || []
-    console.log(customFiler)
     localStorage.setItem("userFilter", JSON.stringify([...customFiler, value]))
     this.localStorageInput.nativeElement.value = ''
     this.userSetFilters.push(value)

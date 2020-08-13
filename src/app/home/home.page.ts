@@ -50,7 +50,6 @@ export class HomePage {
     if(toggle === 'null') toggle = ' '
     const newBadWords = JSON.parse(localStorage.getItem('userFilter')) || []
     const removeWords = JSON.parse(localStorage.getItem('removeFilter')) || []
-    console.log(newBadWords)
     if(this.clean.nativeElement.value === null || this.clean.nativeElement.value === ''){
       const customFilter = new Filter({
         placeHolder: toggle
@@ -70,10 +69,6 @@ export class HomePage {
 
   addElement(text){
     this.textarea.nativeElement.value = text
-  }
-
-  open(): void {
-    
   }
 
   toggleInput() {
