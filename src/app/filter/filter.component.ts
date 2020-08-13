@@ -10,19 +10,21 @@ export class FilterComponent implements OnInit {
   @ViewChild('arrayButton') arrBtn
   @ViewChild('ul') ul: ElementRef
   userSetFilters = JSON.parse(localStorage.getItem("userFilter"))
-  constructor(private renderer: Renderer2) { }
+  constructor() { }
 
   ngOnInit() {}
 
   pushLocalStorage(value){
+    if(!value) return
     let customFiler = JSON.parse(localStorage.getItem('userFilter'))
     localStorage.setItem("userFilter", JSON.stringify([...customFiler, value]))
     this.localStorageInput.nativeElement.value = ''
-    this.arrBtn._disabled = true
+    // this.arrBtn._disabled = true
     this.userSetFilters.push(value)
   }
 
   removeFromLocalStorage(value){
+    if(!value) return
     this.userSetFilters = this.userSetFilters.filter((filter) => {
       return filter != this.userSetFilters[value]
     })
