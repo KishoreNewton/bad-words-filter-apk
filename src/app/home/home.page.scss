@@ -1,12 +1,16 @@
+$breakpoint-mobile-xxtrasmall: 175px;
 $breakpoint-mobile-xtrasmall: 250px;
 $breakpoint-mobile-small: 320px;
 $breakpoint-mobile-medium: 375px;
 $breakpoint-mobile-large: 425px;
 $breakpoint-tablet: 768px;
 $breakpoint-mobile-height: 300px;
+$breakpoint-mobile-x-height: 400px;
 $breakpoint-mobile-medium-height: 500px;
+$breakpoint-mobile-xmedium-height: 560px;
 $breakpoint-mobile-large-height: 750px;
-$breakpoint-mobile-xlarge-height: 900px;
+$breakpoint-mobile-xlarge-height: 800px;
+$breakpoint-mobile-xxlarge-height: 900px;
 
 #container {
   text-align: center;
@@ -38,6 +42,33 @@ $breakpoint-mobile-xlarge-height: 900px;
 
 .btn {
   font-weight: 800;
+}
+
+@media (min-width: $breakpoint-mobile-xxtrasmall) {
+  #input {
+    border: 1px solid rgb(42, 42, 42);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 200px;
+    width: 200px;
+    margin-bottom: 10px;
+  }
+
+  .bottom {
+    margin-top: 10px;
+  }
+  
+  
+  .btn {
+    height: 40px;
+    width: 100px;
+    // background-color: black;
+    // color: wheat;
+    // border-radius: 25px;
+    text-transform: uppercase;
+  }
 }
 
 @media (min-width: $breakpoint-mobile-xtrasmall) {
@@ -155,23 +186,46 @@ $breakpoint-mobile-xlarge-height: 900px;
 
 @media(min-height: $breakpoint-mobile-height) {
   #input {
-    height: 250px;
+    height: 90px;
+  }
+}
+
+@media(min-height: $breakpoint-mobile-x-height) {
+  #input {
+    height: 290px;
   }
 }
 
 @media(min-height: $breakpoint-mobile-medium-height) {
   #input {
-    height: 450px;
+    height: 320px;
+  }
+}
+
+@media(min-height: $breakpoint-mobile-xmedium-height) {
+  #input {
+    height: 380px;
   }
 }
 
 @media(min-height: $breakpoint-mobile-large-height) {
   #input {
-    height: 650px;
+    height: 550px;
+  }
+}
+
+@media(min-height: $breakpoint-mobile-large-height) {
+  #input {
+    height: 600px;
   }
 }
 @media(min-height: $breakpoint-mobile-xlarge-height) {
   #input {
-    height: 850px;
+    height: 630px;
+  }
+}
+@media(min-height: $breakpoint-mobile-xxlarge-height) {
+  #input {
+    height: 820px;
   }
 }
