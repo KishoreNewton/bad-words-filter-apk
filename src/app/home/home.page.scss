@@ -214,18 +214,28 @@ $breakpoint-mobile-xxlarge-height: 900px;
   }
 }
 
-@media(min-height: $breakpoint-mobile-large-height) {
-  #input {
-    height: 580px;
-  }
-}
 @media(min-height: $breakpoint-mobile-xlarge-height) {
   #input {
-    height: 650px;
+    height: 610px;
   }
 }
 @media(min-height: $breakpoint-mobile-xxlarge-height) {
   #input {
-    height: 720px;
+    height: 640px;
+  }
+}
+@media(min-height: 1000px) {
+  #input {
+    height: 780px;
+  }
+}
+@media(min-height: 1500px) {
+  #input {
+    height: 1000px;
+  }
+}
+@media(min-height: 3000px) {
+  #input {
+    height: 2000px;
   }
 }
